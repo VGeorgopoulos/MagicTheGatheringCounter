@@ -14,6 +14,8 @@
     <string name="minusOne">- 1HP</string>
     <string name="playerMana">Total Mana Points</string>
     <string name="xMana">0</string>
+    <string name="yMana">0</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
+    <string name="reset_button">End Match</string>
 </resources>

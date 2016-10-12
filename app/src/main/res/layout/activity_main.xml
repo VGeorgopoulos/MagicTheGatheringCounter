@@ -26,10 +26,6 @@
                     android:id="@+id/playerX"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@id/xHeartImg"
-                    android:layout_alignLeft="@id/playerXHP"
-                    android:layout_alignRight="@id/xHeartImg"
-                    android:layout_alignStart="@id/playerXHP"
                     android:fontFamily="serif-monospace"
                     android:gravity="center"
                     android:padding="16dp"
@@ -151,6 +147,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/xHPButtons"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginTop="18dp"
                     android:padding="6dp"
                     android:text="@string/playerMana"
                     android:textColor="@android:color/holo_blue_dark" />
@@ -178,13 +175,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/xManaImg"
-                    android:layout_toLeftOf="@id/xManaTotal" />
+                    android:layout_toLeftOf="@id/xManaTotal"
+                    android:text="@string/minus" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/xManaImg"
-                    android:layout_toRightOf="@id/xManaTotal" />
+                    android:layout_toRightOf="@id/xManaTotal"
+                    android:text="@string/plus" />
             </RelativeLayout>
 
 
@@ -212,14 +211,10 @@
                     android:id="@+id/playerY"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@id/heartImg"
-                    android:layout_alignLeft="@id/playerYHP"
-                    android:layout_alignRight="@id/heartImg"
-                    android:layout_alignStart="@id/playerYHP"
                     android:fontFamily="serif-monospace"
                     android:gravity="center"
                     android:padding="16dp"
-                    android:text="@string/player_x"
+                    android:text="@string/player_y"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -235,7 +230,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/currentHP"
+                    android:id="@+id/currentYHP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/playerY"
@@ -246,33 +241,134 @@
                     android:textSize="20sp" />
 
                 <View
-                    android:id="@+id/divider"
+                    android:id="@+id/dividerY"
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/currentHP"
-                    android:layout_alignTop="@id/currentHP"
+                    android:layout_alignBottom="@id/currentYHP"
+                    android:layout_alignTop="@id/currentYHP"
                     android:layout_margin="5dp"
-                    android:layout_toRightOf="@id/currentHP"
+                    android:layout_toRightOf="@id/currentYHP"
                     android:background="@android:color/black" />
 
                 <TextView
-                    android:id="@+id/maxHP"
+                    android:id="@+id/maxYHP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/playerY"
-                    android:layout_toRightOf="@id/divider"
+                    android:layout_toRightOf="@id/dividerY"
                     android:text="@string/current_yhp"
                     android:textColor="@android:color/black"
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:id="@+id/heartImg"
+                    android:id="@+id/yHeartImg"
                     android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/maxHP"
-                    android:layout_alignTop="@id/maxHP"
-                    android:layout_toRightOf="@id/maxHP"
+                    android:layout_alignBottom="@id/maxYHP"
+                    android:layout_alignTop="@id/maxYHP"
+                    android:layout_toRightOf="@id/maxYHP"
                     android:src="@drawable/zelda_hp" />
+
+                <LinearLayout
+                    android:id="@+id/yHPButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/currentYHP"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/minusYButtons"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/minusFive" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/minusTwo" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/minusOne" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/plusYButtons"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/plusFive" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/plusTwo" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/plusOne" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/manaY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/yHPButtons"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="18dp"
+                    android:padding="6dp"
+                    android:text="@string/playerMana"
+                    android:textColor="@android:color/holo_blue_dark" />
+
+                <ImageView
+                    android:id="@+id/yManaImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_below="@+id/manaY"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mana_icons" />
+
+                <TextView
+                    android:id="@+id/yManaTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/yManaImg"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:padding="13dp"
+                    android:text="@string/yMana"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/yManaImg"
+                    android:layout_toLeftOf="@id/yManaTotal"
+                    android:text="@string/minus" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/yManaImg"
+                    android:layout_toRightOf="@id/yManaTotal"
+                    android:text="@string/plus" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -285,5 +381,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
+        android:text="@string/reset_button"
         android:onClick="resetScores" />
 </RelativeLayout>
