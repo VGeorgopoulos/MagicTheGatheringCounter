@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Magic: The Gathering Counter</string>
+    <string name="player_x">PlayerX</string>
+    <string name="player_xhp">HP:</string>
+    <string name="current_xhp">20</string>
+    <string name="player_y">PlayerY</string>
+    <string name="player_yhp">HP:</string>
+    <string name="current_yhp">20</string>
+    <string name="plusFive">+ 5HP</string>
+    <string name="plusTwo">+ 2HP</string>
+    <string name="plusOne">+ 1HP</string>
+    <string name="minusFive">- 5HP</string>
+    <string name="minusTwo">- 2HP</string>
+    <string name="minusOne">- 1HP</string>
+    <string name="playerMana">Total Mana Points</string>
+    <string name="xMana">0</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+</resources>
