@@ -7,11 +7,13 @@
     tools:context="com.example.android.magicthegatheringcounter.MainActivity">
 
     <LinearLayout
+        android:id="@+id/playersLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/playerXLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -102,16 +104,19 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="minusFiveX"
                             android:text="@string/minusFive" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="minusTwoX"
                             android:text="@string/minusTwo" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="minusOneX"
                             android:text="@string/minusOne" />
                     </LinearLayout>
 
@@ -126,16 +131,19 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="plusFiveX"
                             android:text="@string/plusFive" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="plusTwoX"
                             android:text="@string/plusTwo" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="plusOneX"
                             android:text="@string/plusOne" />
                     </LinearLayout>
                 </LinearLayout>
@@ -161,7 +169,7 @@
                     android:src="@drawable/mana_icons" />
 
                 <TextView
-                    android:id="@+id/xManaTotal"
+                    android:id="@+id/currentXMana"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/xManaImg"
@@ -175,14 +183,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/xManaImg"
-                    android:layout_toLeftOf="@id/xManaTotal"
+                    android:layout_toLeftOf="@id/currentXMana"
+                    android:onClick="minusManaX"
                     android:text="@string/minus" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/xManaImg"
-                    android:layout_toRightOf="@id/xManaTotal"
+                    android:layout_toRightOf="@id/currentXMana"
+                    android:onClick="plusManaX"
                     android:text="@string/plus" />
             </RelativeLayout>
 
@@ -197,6 +207,7 @@
             android:background="@android:color/darker_gray"></View>
 
         <LinearLayout
+            android:id="@+id/playerYLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -287,16 +298,19 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="minusFiveY"
                             android:text="@string/minusFive" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="minusTwoY"
                             android:text="@string/minusTwo" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="minusOneY"
                             android:text="@string/minusOne" />
                     </LinearLayout>
 
@@ -311,16 +325,19 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="plusFiveY"
                             android:text="@string/plusFive" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="plusTwoY"
                             android:text="@string/plusTwo" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="plusOneY"
                             android:text="@string/plusOne" />
                     </LinearLayout>
                 </LinearLayout>
@@ -346,7 +363,7 @@
                     android:src="@drawable/mana_icons" />
 
                 <TextView
-                    android:id="@+id/yManaTotal"
+                    android:id="@+id/currentYMana"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/yManaImg"
@@ -360,14 +377,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/yManaImg"
-                    android:layout_toLeftOf="@id/yManaTotal"
+                    android:layout_toLeftOf="@id/currentYMana"
+                    android:onClick="minusManaY"
                     android:text="@string/minus" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/yManaImg"
-                    android:layout_toRightOf="@id/yManaTotal"
+                    android:layout_toRightOf="@id/currentYMana"
+                    android:onClick="plusManaY"
                     android:text="@string/plus" />
             </RelativeLayout>
         </LinearLayout>
@@ -375,12 +394,13 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/reset_button"
+        android:id="@+id/end_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
-        android:text="@string/reset_button"
-        android:onClick="resetScores" />
+        android:onClick="endMatch"
+        android:text="@string/end_match" />
+
 </RelativeLayout>

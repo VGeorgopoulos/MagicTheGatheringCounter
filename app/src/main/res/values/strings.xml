@@ -17,5 +17,6 @@
     <string name="yMana">0</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="reset_button">End Match</string>
+    <string name="end_match">End Match</string>
+    <string name="total_wins">Total Wins:</string>
 </resources>
