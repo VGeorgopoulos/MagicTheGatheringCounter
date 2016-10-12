@@ -156,9 +156,8 @@ public class MainActivity extends AppCompatActivity {
     public void minusManaX(View view) {
         if (manaPointsPlayerX > 0) {
             manaPointsPlayerX -= 1;
-            displayManaPointsForX(manaPointsPlayerX);
-        } else
-            displayManaPointsForX(manaPointsPlayerX);
+        }
+        displayManaPointsForX(manaPointsPlayerX);
     }
 
     /**
@@ -173,9 +172,8 @@ public class MainActivity extends AppCompatActivity {
     public void minusManaY(View view) {
         if (manaPointsPlayerY > 0) {
             manaPointsPlayerY -= 1;
-            displayManaPointsForX(manaPointsPlayerY);
-        } else
-            displayManaPointsForX(manaPointsPlayerY);
+        }
+        displayManaPointsForX(manaPointsPlayerY);
     }
 
 }
