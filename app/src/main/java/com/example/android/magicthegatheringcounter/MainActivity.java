@@ -6,11 +6,13 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    public static final int FULL_HEALTH_POINTS = 20;
+    public static final int DEFAULT_MANA_POINTS = 0;
     //Variables for HP and Mana of the players X & Y
-    int playerXhp = 20;
-    int playerYhp = 20;
-    int playerXmana = 0;
-    int playerYmana = 0;
+    int healthPointsPlayerX = 20;
+    int healthPointsPlayerY = 20;
+    int manaPointsPlayerX = 0;
+    int manaPointsPlayerY = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,33 +23,33 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the current HP for Player X
      */
-    public void displayXhp(int hp) {
-        TextView currentHP = (TextView) findViewById(R.id.currentXHP);
-        currentHP.setText(String.valueOf(hp));
+    public void displayHealthPointsForX(int hitPoints) {
+        TextView currentHitPoints = (TextView) findViewById(R.id.currentXHP);
+        currentHitPoints.setText(String.valueOf(hitPoints));
     }
 
     /**
      * Displays the current HP for Player Y
      */
-    public void displayYhp(int hp) {
-        TextView currentHP = (TextView) findViewById(R.id.currentYHP);
-        currentHP.setText(String.valueOf(hp));
+    public void displayHealthPointsForY(int hitPoints) {
+        TextView currentHitPoints = (TextView) findViewById(R.id.currentYHP);
+        currentHitPoints.setText(String.valueOf(hitPoints));
     }
 
     /**
      * Displays the current Mana for Player X
      */
-    public void displayManaX(int mana) {
-        TextView currentMana = (TextView) findViewById(R.id.currentXMana);
-        currentMana.setText(String.valueOf(mana));
+    public void displayManaPointsForX(int manaPoints) {
+        TextView currentManaPoints = (TextView) findViewById(R.id.currentXMana);
+        currentManaPoints.setText(String.valueOf(manaPoints));
     }
 
     /**
      * Displays the current Mana for Player X
      */
-    public void displayManaY(int mana) {
-        TextView currentMana = (TextView) findViewById(R.id.currentYMana);
-        currentMana.setText(String.valueOf(mana));
+    public void displayManaPointsForY(int manaPoints) {
+        TextView currentManaPoints = (TextView) findViewById(R.id.currentYMana);
+        currentManaPoints.setText(String.valueOf(manaPoints));
     }
 
     /**
@@ -55,14 +57,14 @@ public class MainActivity extends AppCompatActivity {
      * Resets Mana and HP to Default values
      */
     public void endMatch(View view) {
-        playerXhp = 20;
-        playerYhp = 20;
-        playerXmana = 0;
-        playerYmana = 0;
-        displayXhp(20);
-        displayYhp(20);
-        displayManaX(0);
-        displayManaY(0);
+        healthPointsPlayerX = 20;
+        healthPointsPlayerY = 20;
+        manaPointsPlayerX = 0;
+        manaPointsPlayerY = 0;
+        displayHealthPointsForX(FULL_HEALTH_POINTS);
+        displayHealthPointsForY(FULL_HEALTH_POINTS);
+        displayManaPointsForX(DEFAULT_MANA_POINTS);
+        displayManaPointsForY(DEFAULT_MANA_POINTS);
     }
 
     /**
@@ -70,18 +72,18 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void plusFiveX(View view) {
-        playerXhp += 5;
-        displayXhp(playerXhp);
+        healthPointsPlayerX += 5;
+        displayHealthPointsForX(healthPointsPlayerX);
     }
 
     public void plusTwoX(View view) {
-        playerXhp += 2;
-        displayXhp(playerXhp);
+        healthPointsPlayerX += 2;
+        displayHealthPointsForX(healthPointsPlayerX);
     }
 
     public void plusOneX(View view) {
-        playerXhp += 1;
-        displayXhp(playerXhp);
+        healthPointsPlayerX += 1;
+        displayHealthPointsForX(healthPointsPlayerX);
     }
 
     /**
@@ -89,18 +91,18 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void minusFiveX(View view) {
-        playerXhp -= 5;
-        displayXhp(playerXhp);
+        healthPointsPlayerX -= 5;
+        displayHealthPointsForX(healthPointsPlayerX);
     }
 
     public void minusTwoX(View view) {
-        playerXhp -= 2;
-        displayXhp(playerXhp);
+        healthPointsPlayerX -= 2;
+        displayHealthPointsForX(healthPointsPlayerX);
     }
 
     public void minusOneX(View view) {
-        playerXhp -= 1;
-        displayXhp(playerXhp);
+        healthPointsPlayerX -= 1;
+        displayHealthPointsForX(healthPointsPlayerX);
     }
 
     /**
@@ -108,18 +110,18 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void plusFiveY(View view) {
-        playerYhp += 5;
-        displayYhp(playerYhp);
+        healthPointsPlayerY += 5;
+        displayHealthPointsForY(healthPointsPlayerY);
     }
 
     public void plusTwoY(View view) {
-        playerYhp += 2;
-        displayYhp(playerYhp);
+        healthPointsPlayerY += 2;
+        displayHealthPointsForY(healthPointsPlayerY);
     }
 
     public void plusOneY(View view) {
-        playerYhp += 1;
-        displayYhp(playerYhp);
+        healthPointsPlayerY += 1;
+        displayHealthPointsForY(healthPointsPlayerY);
     }
 
     /**
@@ -127,18 +129,18 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void minusFiveY(View view) {
-        playerYhp -= 5;
-        displayYhp(playerYhp);
+        healthPointsPlayerY -= 5;
+        displayHealthPointsForY(healthPointsPlayerY);
     }
 
     public void minusTwoY(View view) {
-        playerYhp -= 2;
-        displayYhp(playerYhp);
+        healthPointsPlayerY -= 2;
+        displayHealthPointsForY(healthPointsPlayerY);
     }
 
     public void minusOneY(View view) {
-        playerYhp -= 1;
-        displayYhp(playerYhp);
+        healthPointsPlayerY -= 1;
+        displayHealthPointsForY(healthPointsPlayerY);
     }
 
 
@@ -147,16 +149,16 @@ public class MainActivity extends AppCompatActivity {
      * Also Mana can't go below Zero
      */
     public void plusManaX(View view) {
-        playerXmana += 1;
-        displayManaX(playerXmana);
+        manaPointsPlayerX += 1;
+        displayManaPointsForX(manaPointsPlayerX);
     }
 
     public void minusManaX(View view) {
-        if (playerXmana > 0) {
-            playerXmana -= 1;
-            displayManaX(playerXmana);
+        if (manaPointsPlayerX > 0) {
+            manaPointsPlayerX -= 1;
+            displayManaPointsForX(manaPointsPlayerX);
         } else
-            displayManaX(playerXmana);
+            displayManaPointsForX(manaPointsPlayerX);
     }
 
     /**
@@ -164,16 +166,16 @@ public class MainActivity extends AppCompatActivity {
      * Also Mana can't go below Zero
      */
     public void plusManaY(View view) {
-        playerYmana += 1;
-        displayManaY(playerYmana);
+        manaPointsPlayerY += 1;
+        displayManaPointsForY(manaPointsPlayerY);
     }
 
     public void minusManaY(View view) {
-        if (playerYmana > 0) {
-            playerYmana -= 1;
-            displayManaX(playerYmana);
+        if (manaPointsPlayerY > 0) {
+            manaPointsPlayerY -= 1;
+            displayManaPointsForX(manaPointsPlayerY);
         } else
-            displayManaX(playerYmana);
+            displayManaPointsForX(manaPointsPlayerY);
     }
 
 }
